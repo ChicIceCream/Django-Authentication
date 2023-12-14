@@ -1,0 +1,23 @@
+{% load static %}
+
+<html>
+    <head>
+        <title> SignIn </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'authentication/styles.css' %}">
+    </head>
+    <body> 
+
+        <h3>SignIn</h3>
+        
+        <form action="/signin" method="post">
+            {% csrf_token %}
+            <label for="">UserName</label>
+            <input type="text" id='username' name='username' placeholder="Enter your Username" Required>
+            <br>
+
+            <label for="pass1">Password</label>
+            <input type="password" id='pass1' name='pass1' placeholder="Enter your Password" Required>
+            <br>
+
+            <button type="submit">Sign In</button>
+        </form>

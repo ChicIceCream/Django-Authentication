@@ -1,0 +1,38 @@
+{% load static %}
+
+<html>
+    <head>
+        <title> SignUp </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'authentication/styles.css' %}">
+    </head>
+    <body> 
+
+        <h3>SignUp</h3>
+        
+        <form action="/signup" method="post">
+            {% csrf_token %}
+            <label for="">UserName</label>
+            <input type="text" id='username' name='username' placeholder="Create your username (onlu Alpha-Numeric)" Required>
+            <br>
+            <label for="">First Name</label>
+            <input type="text" id='fname' name='fname' placeholder="First name please" Required>
+            <br>
+
+            <label for="">Last Name</label>
+            <input type="text" id='lname' name='lname' placeholder="Last name please" Required>
+            <br>
+
+            <label for="">Email Address</label>
+            <input type="email" id='email' name='email' placeholder="Enter your email address" Required>
+            <br>
+
+            <label for="">Password</label>
+            <input type="password" id='pass1' name='pass1' placeholder="Enter your password" Required>
+            <br>
+
+            <label for="">Confirm Password</label>
+            <input type="password" id='pass2' name='pass2' placeholder="Please confirm your password" Required>
+            <br>
+
+            <button type="submit">Sign Up</button>
+        </form>

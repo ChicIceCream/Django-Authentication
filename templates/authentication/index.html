@@ -1,0 +1,30 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Authentication</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'authentication/styles.css' %}">
+
+    </head>
+    <body>
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissable fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+
+        <h1>Authentication</h1>
+
+        {% if user.is_authenticated %}
+        <h3>Hello {{ fname }}</h3>
+        <h4>You're successfully logged in!</h4>
+        <a href="/signout"><button type="button">Sign Out</button></a>
+        {% else %}
+        <a href="/signup"><button type="button">Sign Up</button></a>
+        <a href="/signin"><button type="button">Sign In</button></a>
+        {% endif %}
+    </body>
+</html>
