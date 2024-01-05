@@ -1,6 +1,5 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     display: flex;
@@ -8,6 +7,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background: linear-gradient(to bottom, #3498db, #f4f4f4);
 }
 
 h1, h3, h4 {
